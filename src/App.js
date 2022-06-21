@@ -27,22 +27,26 @@ function App() {
       console.log("Fetching current user token prices in usd");
       let tokenInfo = [];
       tokens.forEach((item)=> {
-        axios.get('https://deep-index.moralis.io/api/v2/erc20/' + item.token_address + "/price",
-        {headers}
-      ).then((response) => {
-        let data = response.data;
         let obj = {};
         obj['id'] = item.token_address;
         obj['name'] = item.name;
         obj['symbol'] = item.symbol;
         obj['balanceTokens'] = item.balance / (10 ** item.decimals);
+        axios.get('https://deep-index.moralis.io/api/v2/erc20/' + item.token_address + "/price",
+        {headers}
+      ).then((response) => {
+        let data = response.data;
         obj['priceInUsd'] = data.usdPrice;
+        //tokenInfo.push(obj);
+      }).catch(error => {
+        obj['priceInUsd'] =`${error.response.data.message}`;
+      }).finally(()=>{
         tokenInfo.push(obj);
       })
     })
       console.log(tokenInfo);
     }).catch(error => {
-  console.log(error);
+      console.log(error);
   })
 }
 
