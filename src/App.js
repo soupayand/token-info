@@ -7,7 +7,7 @@ function App() {
   const[blockchain, setBlockchain] = useState("");
   const[tokenInfo, setTokenInfo] = useState([]);
   const headers = {
-    'x-api-key' : 'UEj11ZAfu7nJk0ZztnIvbLAdW8KFauDDalWF64XN1UfoHhcuLj6auyJl6nuOND35'
+    'x-api-key' : 'UEj11ZAfu7nJk0ZztnIvbLAdW8KFauDDalWF64XN1UfoHhcuLj6auyJl6nuXXXXX'
   }
 
   function getTokenBalances(e) {
