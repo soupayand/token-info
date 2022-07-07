@@ -69,3 +69,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # token-info
+
+The project aims to retrieve token info of a particular user by taking wallet address and blockchain as the input. This can be used to retrieve all the tokens on a particular blockchain like eth, bsc etc. The final output is currently logged in the console.
